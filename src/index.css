@@ -1,0 +1,9 @@
+/* Alternatively, you can use relative paths if the '~' doesn't work */
+@import "../node_modules/slick-carousel/slick/slick.css";
+@import "../node_modules/slick-carousel/slick/slick-theme.css";
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
