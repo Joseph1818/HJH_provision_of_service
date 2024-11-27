@@ -1,28 +1,47 @@
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FaGlobe } from 'react-icons/fa';
 
 function LanguageSwitcher() {
   const { i18n } = useTranslation();
+  const [isOpen, setIsOpen] = useState(false);
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
+    setIsOpen(false);
   };
 
   return (
-    <div className="relative inline-block text-left">
-      <div>
-        <button type="button" className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500">
-          <FaGlobe className="mr-2" />
-          {i18n.language.split('-')[0].toUpperCase()}
-        </button>
-      </div>
-      <div className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
-        <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-          <button onClick={() => changeLanguage('en')} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">English</button>
-          <button onClick={() => changeLanguage('fr')} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Français</button>
-          <button onClick={() => changeLanguage('es')} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Español</button>
+    <div className="relative">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex items-center space-x-1 text-white hover:text-gray-300"
+      >
+        <FaGlobe />
+        <span>{i18n.language.toUpperCase()}</span>
+      </button>
+      {isOpen && (
+        <div className="absolute right-0 mt-2 py-2 w-48 bg-white rounded-md shadow-xl z-20">
+          <button
+            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left"
+            onClick={() => changeLanguage('en')}
+          >
+            English
+          </button>
+          <button
+            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left"
+            onClick={() => changeLanguage('fr')}
+          >
+            Français
+          </button>
+          <button
+            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left"
+            onClick={() => changeLanguage('es')}
+          >
+            Español
+          </button>
         </div>
-      </div>
+      )}
     </div>
   );
 }

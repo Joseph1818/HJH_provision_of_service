@@ -1,16 +1,21 @@
 {
-    "Home": "Home",
-    "worldwidePresence": "Worldwide Presence",
-    "about": "About",
-    "contacts": "Contacts",
-    "heroTitle": "The future has landed",
-    "heroSubtitle": "Discover our global presence and services",
-    "learnMore": "Learn More",
-    "welcomeMessage": "Welcome to our multilingual website!",
-    "homeContent": "This is the home page content.",
-    "worldwidePresenceContent": "Explore our worldwide presence and global impact.",
-    "aboutContent": "Learn more about our company and mission.",
-    "contactsContent": "Get in touch with us for any inquiries or support."
-  }
-  
-  
+  "home": "Home",
+  "worldwidePresence": "Worldwide Presence",
+  "contacts": "Contacts",
+  "heroTitle1": "Welcome to Our Company",
+  "heroSubtitle1": "Innovating for a better future",
+  "heroTitle2": "Global Solutions",
+  "heroSubtitle2": "Serving clients worldwide",
+  "heroTitle3": "Expert Team",
+  "heroSubtitle3": "Dedicated professionals at your service",
+  "learnMore": "Learn More",
+  "procurement": "PROCUREMENT",
+  "procurementSubtitle": "Advanced Procurement Strategy",
+  "procurementContent": "HJH. PROVISION OF SERVICES goes beyond merely supporting your procurement needs. We collaborate to develop a seamless and unified process that is both straightforward and efficient, adding extra value along the way. By merging our systems with yours, we create an optimized procurement workflow that covers every step—from ordering and sourcing to tracking and delivery. We can integrate with any client system, adapting to your specific needs and working in harmony with your operations. HJH. PROVISION OF SERVICES: at the forefront of cutting-edge procurement solutions",
+  "yearsOfExperience": "Years of Experience",
+  "globalVendors": "Global Vendors",
+  "buyersInKeyMarkets": "Buyers in Key Markets",
+  "dedicatedAccountHandles": "Dedicated Account Handles",
+  "worldwidePresenceContent": "Our extensive global network of vendors and products ensures we are always well-equipped to meet your requirements, no matter the scope or location."
+}
+

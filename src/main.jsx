@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import { createRoot } from 'react-dom/client';
 import WebLayout from "./layouts/WebLayout";
 import Home from "./pages/Home";
-import WorldwidePresence from './pages/WorldwidePresence';
 import Contacts from "./pages/Contacts";
 import './index.css'
 
@@ -17,7 +16,6 @@ root.render(
       <Route element={<WebLayout />}>
         <Route path="" element={<Home/>} />
         <Route path="/home" element={<Navigate to="/" replace />} />
-        <Route path="/worldwide-presence" element={<WorldwidePresence/>} />
         <Route path="/contacts" element={<Contacts/>} />
       </Route>
     </Routes>
