@@ -1,3 +1,4 @@
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSpring, animated } from '@react-spring/web';
 import { useInView } from 'react-intersection-observer';
@@ -11,7 +12,13 @@ function Procurement() {
 
   const slideIn = useSpring({
     opacity: inView ? 1 : 0,
-    transform: inView ? 'translateX(0)' : 'translateX(50px)',
+    transform: inView ? 'translateY(0)' : 'translateY(50px)',
+    config: { mass: 1, tension: 80, friction: 26 },
+  });
+
+  const imageAnimation = useSpring({
+    opacity: inView ? 1 : 0,
+    transform: inView ? 'scale(1)' : 'scale(0.8)',
     config: { mass: 1, tension: 80, friction: 26 },
   });
 
@@ -19,9 +26,9 @@ function Procurement() {
     <section ref={ref} className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <div className="flex flex-wrap items-center">
-          <div className="w-full md:w-1/2 mb-10 md:mb-0">
+          <animated.div style={imageAnimation} className="w-full md:w-1/2 mb-10 md:mb-0">
             <img src="/HJH_PIC6.jpg" alt="Procurement" className="rounded-lg shadow-lg" />
-          </div>
+          </animated.div>
           <animated.div style={slideIn} className="w-full md:w-1/2 md:pl-10">
             <h2 className="text-3xl font-bold mb-4">{t('procurement')}</h2>
             <p className="text-xl mb-6">{t('procurementSubtitle')}</p>
