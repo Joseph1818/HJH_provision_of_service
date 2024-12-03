@@ -1,48 +1,27 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { useSpring, animated, config } from '@react-spring/web';
-import { useInView } from 'react-intersection-observer';
-import { FaGlobe } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { FaGlobe } from 'react-icons/fa';
 
 function WorldwidePresence() {
   const { t } = useTranslation();
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
-  const slideIn = useSpring({
-    opacity: inView ? 1 : 0,
-    transform: inView ? 'translateX(0)' : 'translateX(-50px)',
-    config: config.molasses,
-  });
-
-  const rotateGlobe = useSpring({
-    from: { rotate: 0 },
-    to: { rotate: 360 },
-    loop: true,
-    config: { duration: 20000 },
-  });
 
   return (
-    <section ref={ref} id="worldwide-presence" className="py-20 bg-gradient-to-r from-[#a24431] to-blue-50 text-white">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-wrap items-center">
-          <animated.div style={slideIn} className="w-full lg:w-1/2 pr-10 mb-10 lg:mb-0">
-            <h2 className="text-4xl font-bold mb-6">{t('worldwidePresence')}</h2>
-            <p className="text-xl mb-8">{t('worldwidePresenceContent')}</p>
-            <Link 
-              to="/worldwide-presence" 
-              className="bg-white text-blue-700 py-3 px-6 rounded-full font-bold hover:bg-blue-100 transition duration-300"
+    <section id="worldwide-presence" className="py-16 md:py-20 bg-gray-100">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col md:flex-row items-center">
+          <div className="w-full md:w-1/2 mb-8 md:mb-0">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6">{t('worldwidePresence')}</h2>
+            <p className="text-lg md:text-xl mb-6 md:mb-8">{t('worldwidePresenceContent')}</p>
+            <Link
+              to="/worldwide-presence"
+              className="inline-block bg-blue-600 text-white py-2 px-6 md:py-3 md:px-8 rounded-full font-bold text-lg hover:bg-blue-700 transition duration-300"
             >
               {t('learnMore')}
             </Link>
-          </animated.div>
-          <div className="w-full lg:w-1/2 flex justify-center items-center">
-            <animated.div style={rotateGlobe}>
-              <FaGlobe className="text-[#a24431]" style={{ fontSize: '20rem' }} />
-            </animated.div>
+          </div>
+          <div className="w-full md:w-1/2 flex justify-center">
+            <FaGlobe className="text-blue-600 text-7xl sm:text-9xl md:text-[15rem]" />
           </div>
         </div>
       </div>
